@@ -3,7 +3,7 @@ require 'ipaddr'
 include_recipe "ferm"
 include_recipe "sysctl"
 
-defaults    = node['vpn']
+defaults = node['vpn']
 
 raise "Please set up node['vpn']['psk'] before proceeding..." if defaults['psk'].nil?
 
