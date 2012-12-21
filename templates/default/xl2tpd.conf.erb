@@ -1,0 +1,16 @@
+[global]
+ipsec saref = yes
+access control = no
+
+[lns default]
+ip range = <%= @first %>-<%= @last %>
+local ip = <%= @local %>
+assign ip = yes
+refuse chap = yes
+refuse pap = yes
+unix authentication = yes
+require authentication = yes
+name = OpenswanVPN
+pppoptfile = /etc/ppp/xl2tpd
+length bit = yes
+;

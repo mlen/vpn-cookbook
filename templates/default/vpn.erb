@@ -1,0 +1,16 @@
+table filter {
+  chain INPUT {
+    interface ppp+ ACCEPT;
+
+    proto udp dport 1701 mod policy pol ipsec dir in ACCEPT;
+    proto udp dport (500 4500) ACCEPT;
+    proto (esp ah) ACCEPT;
+  }
+}
+
+table nat {
+  chain POSTROUTING {
+    source <%= @network %>/<%= @netmask %> MASQUERADE;
+  }
+}
+
