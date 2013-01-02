@@ -97,11 +97,14 @@ sysctl "vpn settings" do
 end
 
 service "xl2tpd" do
+  priority 18
   supports :restart => true
+  notifies :restart, "service[ipsec]"
   action [:enable, :start]
 end
 
 service "ipsec" do
+  priority 19
   supports :restart => true, :reload => true, :status => true
   action [:enable, :start]
 end
