@@ -81,7 +81,7 @@ sysctl "vpn settings" do
         "send_redirects" => 0,
         "log_martians" => 0,
         "rp_filter" => 0,
-        "accept_redirests" => 0
+        "accept_redirects" => 0
       },
       "default" => {
         "send_redirects" => 0,
