@@ -17,10 +17,6 @@ first, last, local = range.first, range.last, range.last.succ
 package "openswan"
 package "xl2tpd"
 
-# forward definitions
-service "ipsec"
-service "xl2tpd"
-
 template "/etc/ppp/pap-secrets" do
   owner "root"
   group "root"
