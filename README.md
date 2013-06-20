@@ -4,7 +4,6 @@ Installs and configures OpenSwan/xl2tpd VPN.
 
 ## Requirements
 
-* `ferm` cookbook from mlen/ferm-cookbook
 * `sysctl` cookbook from vpslab/sysctl-cookbook
 
 ## Configuration

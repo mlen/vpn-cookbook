@@ -7,7 +7,6 @@ version          "1.0.3"
 
 recipe "vpn", "Installs and configures VPN server"
 
-depends "ferm"
 depends "sysctl"
 
 supports "debian"

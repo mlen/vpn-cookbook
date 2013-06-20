@@ -1,6 +1,5 @@
 require 'ipaddr'
 
-include_recipe "ferm"
 include_recipe "sysctl"
 
 defaults = node['vpn']
@@ -64,10 +63,6 @@ template "/etc/ipsec.secrets" do
   source "ipsec.secrets.erb"
   variables :server => node['ipaddress'], :psk => defaults['psk']
   notifies :restart, "service[ipsec]"
-end
-
-firewall_include "vpn" do
-  variables :network => defaults['network'], :netmask => defaults['netmask']
 end
 
 sysctl "vpn settings" do
